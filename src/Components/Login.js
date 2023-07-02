@@ -48,7 +48,7 @@ function Login({email,setEmail,password,setPassword}) {
        onChange={(e)=>setPassword(e.target.value)}
       />
       <button className='signupButton'
-      onClick={handleLogin}
+      onClick={()=>handleLogin()}
       >Login</button>
       
       <button className='signupButton'
