@@ -19,9 +19,7 @@ function App() {
   const [confirmPassword, setConfirmPassword] = useState();
   const history = useHistory();
   useEffect(()=>{
-    if(!localStorage.getItem("token")){
-      history.push("/")
-    }
+     
     const getMovies = async ()=>{
       const res = await fetch(`https://madhan235-node-forget-pass.onrender.com/movies/all`,
       {
