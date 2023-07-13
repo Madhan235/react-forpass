@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Base from '../Base/Base'
 
-function Content({movies}) {
+function Content() {
+  const [movies,setMovies] = useState([])
+  useEffect(()=>{
+     
+    const getMovies = async ()=>{
+      const res = await fetch(`https://madhan235-node-forget-pass.onrender.com/movies/all`,
+      {
+      method:"GET",
+        headers:{"auth-token": localStorage.getItem("token")}
+    });  
+    const result = await res.json();
+    // console.log(result.data);
+    setMovies(result.data) 
+    }
+getMovies();
+  },[])
   return (
     <Base
     title={"Stream.net"}
