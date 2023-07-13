@@ -31,9 +31,8 @@ function App() {
     setMovies(result.data) 
     }
 getMovies();
-  })
+  },[])
  
-  
   return (
     <div className="App">
         <Switch>
